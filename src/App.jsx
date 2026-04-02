@@ -1,5 +1,5 @@
 import movieImg from "./assets/movie.png";
-import expenseImg from "./assets/expense.png";
+import expenseImg from "./assets/Expense.png";
 import realestateImg from "./assets/realestate.png";
 
 const skills = {
