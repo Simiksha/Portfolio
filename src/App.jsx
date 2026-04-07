@@ -1,13 +1,51 @@
 import movieImg from "./assets/movie.png";
 import expenseImg from "./assets/Expense.png";
 import realestateImg from "./assets/realestate.png";
-import certificateImg from "./assets/certificate.png";
 
 const skills = {
-  Backend: ["Java", "Spring Boot", "Spring Security", "JWT", "REST APIs"],
-  Frontend: ["React", "Bootstrap", "Axios", "HTML", "CSS", "JavaScript"],
-  Database: ["PostgreSQL", "MySQL"],
-  Tools: ["Git", "GitHub", "Postman", "Cloudinary", "Razorpay", "Netlify", "Render"],
+  "Backend Development": [
+    "Java",
+    "Spring Boot",
+    "Spring Security",
+    "Spring Data JPA",
+    "REST API Development",
+    "JWT Authentication"
+  ],
+  "Frontend Development": [
+    "React",
+    "Axios",
+    "Bootstrap",
+    "Media query",
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "Database": [
+    "PostgreSQL",
+    "MySQL",
+    "Database Design"
+  ],
+  "Tools & Platforms": [
+    "Git",
+    "GitHub",
+    "Postman",
+    "IntelliJ IDEA",
+    "VS Code",
+    "Netlify",
+    "Render"
+  ],
+  "Integrations & Services": [
+    "Cloudinary",
+    "Razorpay",
+    "Brevo"
+  ],
+  "Core Concepts": [
+    "OOP",
+    "Exception Handling",
+    "Debugging",
+    "API Design",
+    "Problem Solving"
+  ]
 };
 
 const projects = [
@@ -167,201 +205,6 @@ function AdditionalProjectCard({ project }) {
 export default function App() {
   return (
     <div className="portfolio-app">
-      <style>{`
-        html {
-          scroll-behavior: smooth;
-        }
-
-        body {
-          background: #f8f9fa;
-          color: #212529;
-        }
-
-        .portfolio-app {
-          min-height: 100vh;
-          background: #f8f9fa;
-        }
-
-        .navbar {
-          background: rgba(255, 255, 255, 0.9) !important;
-          backdrop-filter: blur(12px);
-          box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-          border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-        }
-
-        .nav-link {
-          font-weight: 500;
-          color: #495057 !important;
-          transition: color 0.2s ease;
-        }
-
-        .nav-link:hover {
-          color: #111827 !important;
-        }
-
-        .section-space {
-          padding: 80px 0;
-        }
-
-        .hero-section {
-          padding: 130px 0 100px;
-          background:
-            radial-gradient(circle at top left, rgba(13, 110, 253, 0.10), transparent 32%),
-            radial-gradient(circle at bottom right, rgba(32, 201, 151, 0.10), transparent 28%),
-            linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .hero-section::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background-image:
-            linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
-          background-size: 28px 28px;
-          mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent 85%);
-          pointer-events: none;
-        }
-
-        .hero-title {
-          font-size: clamp(2.4rem, 4vw, 4rem);
-          line-height: 1.2;
-        }
-
-        .hero-subtitle {
-          max-width: 760px;
-          margin: 0 auto;
-        }
-
-        .hero-pill {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          padding: 8px 16px;
-          border-radius: 999px;
-          background: rgba(255,255,255,0.85);
-          border: 1px solid rgba(13, 110, 253, 0.12);
-          box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
-          margin-bottom: 1rem;
-          font-size: 0.95rem;
-          color: #495057;
-        }
-
-        .cert-badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          padding: 10px 16px;
-          border-radius: 14px;
-          background: rgba(255,255,255,0.88);
-          border: 1px solid rgba(0,0,0,0.05);
-          box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
-          margin-top: 1rem;
-          color: #495057;
-          font-size: 0.95rem;
-        }
-
-        .hero-stats {
-          display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 16px;
-          max-width: 720px;
-          margin: 2.5rem auto 0;
-        }
-
-        .stat-box {
-          background: rgba(255,255,255,0.78);
-          border: 1px solid rgba(0,0,0,0.05);
-          border-radius: 18px;
-          padding: 18px 14px;
-          box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
-        }
-
-        .stat-box h5 {
-          font-size: 1.4rem;
-          margin-bottom: 4px;
-          font-weight: 700;
-        }
-
-        .stat-box p {
-          margin: 0;
-          color: #6c757d;
-          font-size: 0.92rem;
-        }
-
-        .section-accent {
-          width: 64px;
-          height: 4px;
-          border-radius: 999px;
-          background: linear-gradient(90deg, #0d6efd, #20c997);
-        }
-
-        .custom-card {
-          border: 1px solid rgba(0, 0, 0, 0.04);
-          border-radius: 24px;
-          box-shadow: 0 14px 32px rgba(15, 23, 42, 0.06);
-          transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-          background: rgba(255, 255, 255, 0.92);
-          backdrop-filter: blur(10px);
-        }
-
-        .custom-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
-          border-color: rgba(13, 110, 253, 0.16);
-        }
-
-        .skill-badge {
-          display: inline-block;
-          background: linear-gradient(180deg, #f8f9fa 0%, #eef2f6 100%);
-          color: #212529;
-          border: 1px solid rgba(0,0,0,0.04);
-          border-radius: 999px;
-          padding: 7px 13px;
-          font-size: 0.9rem;
-          margin: 4px 6px 0 0;
-        }
-
-        .project-image {
-          width: 100%;
-          height: 240px;
-          object-fit: cover;
-          border-top-left-radius: 24px;
-          border-top-right-radius: 24px;
-          border-bottom: 1px solid #f1f1f1;
-          transition: transform 0.35s ease;
-        }
-
-        .custom-card:hover .project-image {
-          transform: scale(1.03);
-        }
-
-        .section-alt {
-          background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-        }
-
-        .footer-text {
-          color: #6c757d;
-          font-size: 0.95rem;
-        }
-
-        @media (max-width: 991px) {
-          .hero-section {
-            padding: 100px 0 70px;
-          }
-
-          .section-space {
-            padding: 70px 0;
-          }
-
-          .hero-stats {
-            grid-template-columns: 1fr;
-            max-width: 320px;
-          }
-        }
-      `}</style>
 
       <nav className="navbar navbar-expand-lg sticky-top">
         <div className="container">
@@ -386,6 +229,11 @@ export default function App() {
               <li className="nav-item">
                 <a className="nav-link" href="#about">
                   About
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#education">
+                  Education
                 </a>
               </li>
               <li className="nav-item">
@@ -481,6 +329,30 @@ export default function App() {
         </div>
       </section>
 
+      <section id="education" className="section-space section-alt">
+        <div className="container">
+          <SectionTitle title="Education" subtitle="My academic background" />
+
+          <div className="row justify-content-center g-4">
+            <div className="col-lg-8">
+              <div className="card p-4 custom-card">
+                <h5 className="fw-bold mb-1">M.Sc. Information Technology</h5>
+                <p className="text-secondary mb-1">Stella Maris College, Chennai</p>
+                <p className="text-muted mb-0">2023 - 2025</p>
+              </div>
+            </div>
+
+            <div className="col-lg-8">
+              <div className="card p-4 custom-card">
+                <h5 className="fw-bold mb-1">BCA</h5>
+                <p className="text-secondary mb-1">Stella Maris College, Chennai</p>
+                <p className="text-muted mb-0">2020 - 2023</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section-space">
         <div className="container">
           <SectionTitle
@@ -534,7 +406,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="additional-projects" className="section-space bg-white">
+      <section id="additional-projects" className="section-space section-alt">
         <div className="container">
           <SectionTitle
             title="Additional Projects"
@@ -548,7 +420,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="contact" className="section-space section-alt">
+      <section id="contact" className="section-space">
         <div className="container">
           <SectionTitle title="Contact" subtitle="Let’s connect" />
           <div className="row justify-content-center">
@@ -560,7 +432,7 @@ export default function App() {
 
                 <div className="d-flex justify-content-center flex-wrap gap-3">
                   <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=your-simikshaleo02@gmail.com&su=Opportunity%20Inquiry"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=simikshaleo02@gmail.com&su=Opportunity%20Inquiry"
                     target="_blank"
                     rel="noreferrer"
                     className="btn btn-dark rounded-pill px-4 py-2"
